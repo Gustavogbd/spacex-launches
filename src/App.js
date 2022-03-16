@@ -1,14 +1,17 @@
-import UpcomingCarousel from './components/UpcomingCarousel'
+import Upcoming from './components/Upcoming'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/Upcoming.css'
 import './App.css'
+import Latest from './components/Latest';
+import { Container } from 'react-bootstrap';
 function App() {
 
 
   return (
-    <div>
-      <UpcomingCarousel />
-    </div>
+    <Container fluid>
+      <Upcoming />
+      <Latest />
+    </Container>
   );
 }
 

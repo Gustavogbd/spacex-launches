@@ -4,12 +4,12 @@ import axios from "axios";
 import { Container, Row } from 'react-bootstrap';
 import './Upcoming.css'
 
-function UpcomingCarousel() {
+function Upcoming() {
 
     const [launches, setLaunches] = useState([])
+    const [latest, setLatest] = useState([])
     const [error, setError] = useState('')
     const axios = require('axios');
-    console.log(launches);
 
     useEffect(() => {
         axios.get('https://api.spacexdata.com/v4/launches/upcoming').then(response => {
@@ -21,9 +21,8 @@ function UpcomingCarousel() {
     },[])
 
   return (
-    <Container className='section__one'>
-      {/* Primeira Seção */}
-      <Container fluid className='col-md-12 section__one'>
+
+      <Container className='col-md-12 section__one'>
 
         <Container fluid className='top mt-2'>
           <h1>Space X</h1>
@@ -47,12 +46,7 @@ function UpcomingCarousel() {
           ))}
         </Row>
       </Container>
-
-
-
-
-    </Container>
   )
 }
 
-export default UpcomingCarousel;
+export default Upcoming;
