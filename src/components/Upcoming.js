@@ -1,8 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Container, Row } from 'react-bootstrap';
 import './Upcoming.css'
+import { AiOutlineRocket } from 'react-icons/ai' 
+
 
 function Upcoming() {
 
@@ -29,7 +30,10 @@ function Upcoming() {
         </Container>
 
         <Row className='section__one mt-5'>
-          <h2 className='section__title'>Próximos Lançamentos</h2>
+          <div className='titulo__section'>Próximos Lançamentos 
+          <AiOutlineRocket/>
+          </div>
+
           {launches?.map((launches, i) => (
             <Container className='col-md-12 mission mt-3'>
               <div className='patch'>
