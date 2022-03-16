@@ -1,15 +1,14 @@
 import UpcomingCarousel from './components/UpcomingCarousel'
-import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './components/Upcoming.css'
 import './App.css'
-
-
 function App() {
 
 
   return (
-    <>
+    <div>
       <UpcomingCarousel />
-    </>
+    </div>
   );
 }
 

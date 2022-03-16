@@ -1,22 +1,7 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-.titulo {
-    font-weight: 700;
-    font-size: 2em;
-}
-.detalhes {
+html {
+    background-color: black;
 
 }
-.App {
-    background-color: lightblue;
-    
-}
-.cards {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+body {
+    background-color: black;
 }

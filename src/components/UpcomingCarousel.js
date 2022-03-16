@@ -1,15 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from "swiper";
-
-
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/bundle";
-
+import { Container, Row } from 'react-bootstrap';
+import './Upcoming.css'
 
 function UpcomingCarousel() {
 
@@ -28,35 +21,37 @@ function UpcomingCarousel() {
     },[])
 
   return (
-    <div>
-        <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
-      >
-        {launches?.map((launches, i) => (
-          <SwiperSlide>
-            <div className="cards">
-              <img src={launches.links.patch.small}/>
-              <p className="titulo">{i + 1} - {launches.name}</p>
-              <p className="detalhes">{launches.details}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <Container className='section__one'>
+      {/* Primeira Seção */}
+      <Container fluid className='col-md-12 section__one'>
 
-    </div>
+        <Container fluid className='top mt-2'>
+          <h1>Space X</h1>
+        </Container>
+
+        <Row className='section__one mt-5'>
+          <h2 className='section__title'>Próximos Lançamentos</h2>
+          {launches?.map((launches, i) => (
+            <Container className='col-md-12 mission mt-3'>
+              <div className='patch'>
+                <img src={launches.links.patch.small} style={{width:'50px',height:'40px'}}/>  
+              </div>
+
+              <div className='detalhes__box'>
+                <p className="titulo">{i + 1} - {launches.name}</p>
+                <p className="detalhes">{launches.details}</p>
+                <p className='data'>Data prevista - {launches.date_local.substring(0,10)}</p>
+              </div>
+
+            </Container>
+          ))}
+        </Row>
+      </Container>
+
+
+
+
+    </Container>
   )
 }
 
